@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import Scoreboard from "../Scoreboard/Scoreboard";
 import { ScoreContext } from "../../Contexts/ScoreContext";
-import { shuffleArray } from "../../Utilities/shuffleArray";
+import { shuffleArray, sleep } from "../../Utilities/utils";
 
 export default function Gameboard() {
     const [score, setScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);
     const [pokemonNames, setPokemonNames] = useState([]);
     
-    const [pokemons, setPokemons] = useState([{
-        image: "",
-        name: ""
-    }]);
+    const [pokemons, setPokemons] = useState(null);
 
     const fetchPokemons = async (number) =>{
+        // To simulate a longer data fetching process
+        await sleep(100);
+
         const pokemons = [];
         const url = `https://pokeapi.co/api/v2/pokemon/`
         for (let i = 1; i <= number; i++) {
@@ -47,6 +47,7 @@ export default function Gameboard() {
 
     const gameContinues = (pokemon_name) => {
         setScore(score + 1);
+        setBestScore(score);
         setPokemonNames([...pokemonNames, pokemon_name]);
         shufflePokemons();
     }
@@ -61,18 +62,26 @@ export default function Gameboard() {
     }, []);
 
     return (
-        <ScoreContext.Provider value={score}>
+        <ScoreContext.Provider value={{score, bestScore}}>
 
             <div className="gameboard">
                 <Scoreboard />  
 
                 <div className="row">
-                    {pokemons.map(p => {
-                        return <Card key={p.name} 
-                                pokemonImage={p.image} 
-                                pokemonName={p.name}
-                                clickEvent={checkGamestate}/>
-                    })}
+                    {pokemons !== null  ?
+                        pokemons.map(p => {
+                            return <Card key={p.name} 
+                                    pokemonImage={p.image} 
+                                    pokemonName={p.name}
+                                    clickEvent={checkGamestate}/>
+                        })
+                        :
+                        <div className="d-flex justify-content-center h-100">
+                        <div className="spinner-border" role="status"></div>
+                        <span className="sr-only">Fetching Pokemon...</span>
+                    </div>
+                    }
+
                 </div>
             </div>
 
