@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+* {
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
 .header {
     background-color: #ef0e3d;
 }
@@ -14,7 +21,6 @@
 .seperator .poke-melon {
     width: 50px;
     height: 50px;
-    position: absolute;
     border: 5px solid black;
     border-radius: 50%;
 
@@ -31,4 +37,23 @@
     position: absolute;
     border: 3px solid black;
     border-radius: 50%;
+}
+
+.card {
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.15);
+}
+
+.score {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+@media (max-width: 520px) {
+    .scoreboard {
+        flex-direction: column;
+        gap: 16px !important;
+    }
 }

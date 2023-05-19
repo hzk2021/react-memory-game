@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <div className="container-fluid p-0 m-0 mb-4">
             <div className="header">
-                <img src={headerIcon} alt='pokemon memory header' className="img-fluid"/>
+                <img src={headerIcon} alt='pokemon memory header' className="w-50 py-4"/>
             </div>
 
             <div className="seperator">

@@ -77,10 +77,10 @@ export default function Gameboard() {
                 (gameOver) ?
                     <Overlay message={`Congratulations, your score was ${score}!`} restartEvent={restartGame}/>
                 :
-                    <div className="gameboard">
+                    <div className="gameboard container-fluid w-75">
                         <Scoreboard />  
 
-                        <div className="row">
+                        <div className="row p-5 gap-5 d-flex justify-content-center">
                             {pokemons !== null  ?
                                 pokemons.map(p => {
                                     return <Card key={p.name} 

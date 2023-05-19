@@ -4,7 +4,7 @@ import BestScore from "./BestScore";
 
 export default function Scoreboard() {
     return (
-        <div className="scoreboard">
+        <div className="d-flex justify-content-center gap-5 scoreboard">
             <CurrentScore />
             <BestScore />
         </div>

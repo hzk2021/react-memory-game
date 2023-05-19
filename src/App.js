@@ -6,10 +6,10 @@ import './assets/styles/custom.css';
 function App() {
 
   return (
-    <div className='text-center vh-100 position-relative'>
+    <div className='text-center position-relative' style={{minHeight: "100vh", paddingBottom: "2rem"}}>
       <Header />
       <Gameboard />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
