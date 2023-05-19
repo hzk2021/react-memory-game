@@ -1,0 +1,34 @@
+.header {
+    background-color: #ef0e3d;
+}
+
+.seperator {
+    background-color: black;
+    height: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seperator .poke-melon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border: 5px solid black;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: white;
+}
+
+.seperator .poke-button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border: 3px solid black;
+    border-radius: 50%;
+}

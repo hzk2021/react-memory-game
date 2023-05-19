@@ -24,7 +24,7 @@ export default function Gameboard() {
         for (let i = 1; i <= number; i++) {
             const response = await fetch(url + i);
             const pokemonInfo = await response.json();
-            const pokemonImage = pokemonInfo.sprites.other["dream_world"].front_default;
+            const pokemonImage = pokemonInfo.sprites.front_default;
             const pokemonName = pokemonInfo.name;
 
             pokemons.push({
