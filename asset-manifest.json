@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-memory-game/static/css/main.afba2579.css",
+    "main.js": "/react-memory-game/static/js/main.3baaf67a.js",
+    "static/media/pokemon-memory.png": "/react-memory-game/static/media/pokemon-memory.70706317976000c09e6c.png",
+    "index.html": "/react-memory-game/index.html",
+    "main.afba2579.css.map": "/react-memory-game/static/css/main.afba2579.css.map",
+    "main.3baaf67a.js.map": "/react-memory-game/static/js/main.3baaf67a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.afba2579.css",
+    "static/js/main.3baaf67a.js"
+  ]
+}
